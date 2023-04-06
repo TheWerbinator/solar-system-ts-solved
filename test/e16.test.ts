@@ -8,7 +8,7 @@ describe("find", () => {
   });
 
   it("should return the first thing that returns true from a callback with an array of numbers", () => {
-    const returnVal = find([1, 2, 3], (el) => el === 2);
+    const returnVal = find([1, 2, 3], (el: number) => el === 2);
     expect(returnVal).toEqual(2);
     type IsTTest2ANumber = Equal<typeof returnVal, number | undefined>;
   });
@@ -20,7 +20,7 @@ describe("find", () => {
         { v: true, id: 2 },
         { v: true, id: 3 },
       ],
-      (el) => el.v
+      (el: { v: any; }) => el.v
     );
 
     expect(returnVal).toEqual({ v: true, id: 2 });
@@ -34,7 +34,7 @@ describe("find", () => {
         { v: false, id: 2 },
         { v: false, id: 3 },
       ],
-      (obj) => obj.v
+      (obj: { v: any; }) => obj.v
     );
 
     type isValidType1 = Equal<TestObj | undefined, typeof returnValue>;

@@ -4,7 +4,7 @@ import { data } from "../data/data";
 // Return the name of the first Planet in the array
 // Return example: 'Planet Name'
 
-export function getFirstPlanetName(data) {
+export function getFirstPlanetName(data: any) {
   // Your code goes here...
   const planets = data.planets;
   //console.log(planets);

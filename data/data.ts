@@ -1,4 +1,37 @@
-export const data = {
+export type MassData = {
+  massValue: number,
+  massExponent: number,
+};
+
+export type VolData = {
+  volValue: number,
+  volExponent: number,
+};
+
+export type Planet = {
+  id: string,
+  name: string,
+  isPlanet: boolean,
+  mass: MassData,
+  vol: VolData,
+  gravity: number,
+  avgTemp: number,
+  moonsCount?: number,
+  moons?: string[]
+};
+
+export type Asteroid = {
+  name: string,
+  discoveryYear: number,
+  orbitalPeriod: number,
+};
+
+export type AllData = {
+  planets: Planet[],
+  asteroids: Asteroid[],
+};
+
+export const data: AllData = {
   planets: [
     {
       id: "uranus",
@@ -328,11 +361,7 @@ export const data = {
     { name: "25143 Itokawa", discoveryYear: 1998, orbitalPeriod: 556.38 },
     { name: "10370 Hylonome", discoveryYear: 1995, orbitalPeriod: 44561 },
     { name: "45 Eugenia", discoveryYear: 1857, orbitalPeriod: 1638.654 },
-    {
-      name: "(308933) 2006 SQ372",
-      discoveryYear: 2006,
-      orbitalPeriod: 11800000,
-    },
+    { name: "(308933) 2006 SQ372", discoveryYear: 2006, orbitalPeriod: 11800000 },
     { name: "2 Pallas", discoveryYear: 1802, orbitalPeriod: 1685.927 },
     { name: "8405 Asbolus", discoveryYear: 1995, orbitalPeriod: 27796 },
     { name: "20000 Varuna", discoveryYear: 2000, orbitalPeriod: 103440 },

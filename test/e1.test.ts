@@ -21,4 +21,9 @@ describe("getPlanetNames", () => {
       "Vénus",
     ]);
   });
+  it("Should work with a dummy array of planets", () => {
+    expect(getPlanetNames([{ name: "billy" }, { name: "planet krypton" }] as any)).toEqual([
+      "billy", "planet krypton"
+    ]);
+  });
 });
